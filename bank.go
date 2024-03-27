@@ -18,7 +18,6 @@ func main() {
 		fmt.Println("ERROR")
 		fmt.Println(err)
 		fmt.Println("---------")
-		// panic("Can't continue, sorry.")
 	}
 
 	fmt.Println("Welcome to Go Bank!")
@@ -30,8 +29,6 @@ func main() {
 		var choice int
 		fmt.Print("Your choice: ")
 		fmt.Scan(&choice)
-
-		// wantsCheckBalance := choice == 1
 
 		switch choice {
 		case 1:
@@ -47,7 +44,7 @@ func main() {
 				continue
 			}
 
-			accountBalance += depositAmount // accountBalance = accountBalance + depositAmount
+			accountBalance += depositAmount
 			fmt.Println("Balance updated! New amount:", accountBalance)
 			fileops.WriteFloatToFile(accountBalance, accountBalanceFile)
 		case 3:
@@ -65,7 +62,7 @@ func main() {
 				continue
 			}
 
-			accountBalance -= withdrawalAmount // accountBalance = accountBalance + depositAmount
+			accountBalance -= withdrawalAmount
 			fmt.Println("Balance updated! New amount:", accountBalance)
 			fileops.WriteFloatToFile(accountBalance, accountBalanceFile)
 		default:
